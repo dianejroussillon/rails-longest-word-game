@@ -1,0 +1,10 @@
+<h1>New Game</h1>
+<label><%= @grid.each { |letter| letter } %></label>
+
+<h5>What is the longest word you know ?</h5>
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input id="placeholder" type="text" name="name" placeholder="">
+  <input id="tags_list" name="letters" value="<%= @grid %>"type="hidden" />
+  <input id="btn" type="submit">
+</form>
